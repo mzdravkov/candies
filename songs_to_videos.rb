@@ -11,6 +11,6 @@ else
 
 	Dir[File.join(dir_with_songs, '*.mp3')].each do |s|
 		song_name = File.basename s, '.mp3'
-		`avconv -i "#{s}" -loop 1 -shortest -i "#{image}" -r 24 -acodec copy "#{File.join(output_dir, song_name)}.mkv"`
+		`ffmpeg -i "#{s}" -loop 1 -shortest -i "#{image}" -r 24 -acodec copy "#{File.join(output_dir, song_name)}.mkv"`
 	end
 end
