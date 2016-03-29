@@ -21,8 +21,8 @@ else
       exit 0
     fi
   fi
-  cat liked.htm \
+  cat $1 \
     | sed -n -e 's/.*href="\(https:\/\/www\.youtube\.com\/watch[^"]*\)".*/\1/p' \
     | uniq \
-    | xargs youtube-dl --yes-playlist --extract-audio --audio-format "mp3"
+    | xargs youtube-dl --extract-audio --audio-format "mp3"
 fi
