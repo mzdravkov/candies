@@ -24,5 +24,5 @@ else
   cat $1 \
     | sed -n -e 's/.*href="\(https:\/\/www\.youtube\.com\/watch[^"]*\)".*/\1/p' \
     | uniq \
-    | xargs youtube-dl --extract-audio --audio-format "mp3"
+    | xargs -I % youtube-dl --extract-audio --audio-format "mp3" % || true
 fi
