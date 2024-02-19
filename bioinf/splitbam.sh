@@ -64,6 +64,6 @@ fi
 
 samtools view -bo $output1 -s $seed.$frac $input
 samtools view $output1 | cut -f1 > ids.tmp
-samtools view -bo split2.bam -N ^ids.tmp basecalled_pod5.bam
+samtools view -bo $output2 -N ^ids.tmp $input
 rm ids.tmp
 
