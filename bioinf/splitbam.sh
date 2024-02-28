@@ -66,8 +66,8 @@ if [ -z "$output2" ]; then
 fi
 
 
-samtools view -t $threads -bo $output1 -s $seed.$frac $input
-samtools view -t $threads $output1 | cut -f1 > ids.tmp
-samtools view -t $threads -bo $output2 -N ^ids.tmp $input
+samtools view -@ $threads -bo $output1 -s $seed.$frac $input
+samtools view -@ $threads $output1 | cut -f1 > ids.tmp
+samtools view -@ $threads -bo $output2 -N ^ids.tmp $input
 rm ids.tmp
 
