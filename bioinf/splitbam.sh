@@ -21,7 +21,7 @@ unset -v output1
 unset -v output2
 
 
-while getopts ':hsit:1:2:f::' option; do
+while getopts ':hsi:1:2:f:t::' option; do
   case "$option" in
     h) echo "$usage"
        exit
